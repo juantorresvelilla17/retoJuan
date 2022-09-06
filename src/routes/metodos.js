@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const router = Router();
-<<<<<<< HEAD
+const _ = require('underscore')
+
 const _ = require('underscore');
-=======
->>>>>>> fd1372b (rama actualizar producto realizado 2.0)
+
 
 const productos = require('../Productos.json');
 
@@ -59,6 +59,16 @@ router.put('/:Sku', (req, res) => {
         res.status(500).json({error: 'No actualizado'});
     }
 
+});
+
+router.delete('/:Sku', (req, res) => {
+    const {Sku} = req.params;
+   _.each(productos, (producto, i) => {
+    if(producto.Sku == Sku){
+        productos.splice(i, 1);
+    }
+   });
+   res.send('deleted');
 });
 
 module.exports = router;
