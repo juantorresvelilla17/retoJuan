@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const router = Router();
-const _= require('underscore')
 
 const productos = require('../Productos.json');
 
