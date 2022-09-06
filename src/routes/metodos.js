@@ -6,7 +6,7 @@ const productos = require('../Productos.json');
 //Listar productos
 
 router.get('/', (req, res) => {
-    res.json(productos);
+    res.json(productos); 
 });
 
 
